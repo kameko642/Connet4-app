@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xnH-oV-DID">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Final_Project__Connect4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Ko-y1-szp">
+                                <rect key="frame" x="0.0" y="252.66666666666666" width="393" height="336.66666666666674"/>
+                                <color key="backgroundColor" name="AccentColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5Ko-y1-szp" secondAttribute="height" multiplier="7:6" id="iRj-XI-Xix"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="T4d-CZ-mXS">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="idCell" id="gf2-gh-gIs" customClass="BoardCell" customModule="Final_Project__Connect4" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Drd-so-JPG">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fNx-mQ-mPJ">
+                                                    <rect key="frame" x="-57" y="9" width="240" height="128"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fNx-mQ-mPJ" firstAttribute="centerX" secondItem="Drd-so-JPG" secondAttribute="centerX" id="SgD-7H-l6V"/>
+                                                <constraint firstItem="fNx-mQ-mPJ" firstAttribute="height" secondItem="Drd-so-JPG" secondAttribute="height" id="WmL-cz-mth"/>
+                                                <constraint firstItem="fNx-mQ-mPJ" firstAttribute="centerY" secondItem="Drd-so-JPG" secondAttribute="centerY" id="jLr-M7-ZFI"/>
+                                                <constraint firstItem="fNx-mQ-mPJ" firstAttribute="width" secondItem="Drd-so-JPG" secondAttribute="width" id="s11-a8-E7V"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="image" destination="fNx-mQ-mPJ" id="xvF-LN-Zcj"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="uyO-6B-LFY"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="GDg-BW-YcS"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Current Turn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mci-GW-jKL">
+                                <rect key="frame" x="125" y="70" width="143" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jFB-ce-SJm">
+                                <rect key="frame" x="171" y="100" width="50" height="49"/>
+                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="jFB-ce-SJm" secondAttribute="height" multiplier="1:1" id="0GB-cx-6Ix"/>
+                                    <constraint firstAttribute="width" constant="50" id="moY-3E-Reg"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mci-GW-jKL" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="4wL-Hg-S6M"/>
+                            <constraint firstItem="jFB-ce-SJm" firstAttribute="top" secondItem="mci-GW-jKL" secondAttribute="bottom" constant="10" id="Blf-SZ-ax0"/>
+                            <constraint firstItem="5Ko-y1-szp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="JP1-AZ-pDe"/>
+                            <constraint firstItem="5Ko-y1-szp" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="dQC-AI-9dU"/>
+                            <constraint firstItem="jFB-ce-SJm" firstAttribute="centerX" secondItem="mci-GW-jKL" secondAttribute="centerX" id="gll-Jd-r2K"/>
+                            <constraint firstItem="mci-GW-jKL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="14" id="lYw-xv-Wtc"/>
+                            <constraint firstItem="5Ko-y1-szp" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="thQ-Pj-gma"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Q83-Qb-SSh"/>
+                    <size key="freeformSize" width="393" height="852"/>
+                    <connections>
+                        <outlet property="collectionView" destination="5Ko-y1-szp" id="315-eS-DoD"/>
+                        <outlet property="turnImage" destination="jFB-ce-SJm" id="jtl-YH-wNI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-497" y="-461"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="HwF-1w-l90">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="xnH-oV-DID" customClass="WelcomeViewController" customModule="Final_Project__Connect4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="v3n-EY-jex">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSS-DO-XR2">
+                                <rect key="frame" x="101" y="559" width="200" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.035197589718146634" green="0.2849816649686901" blue="0.92128556966781616" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="PLAY NOW!">
+                                    <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle0"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="playButtonisTapped:" destination="xnH-oV-DID" eventType="touchUpInside" id="QHF-xf-RBz"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KGs-PB-yt4">
+                                <rect key="frame" x="-62" y="110" width="526" height="425"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="image">DALL·E 2024-05-10 12.18.09 - A simple and clean digital illustration of a 'Connect 4' logo with a transparent background. The logo should feature the text 'Connect 4' in a modern,-Photoroom.png-Photoroom</string>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="b7y-dw-OeQ"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" button="YES" image="YES"/>
+                        </accessibility>
+                    </view>
+                    <connections>
+                        <outlet property="playButton" destination="XSS-DO-XR2" id="7JV-J2-1rf"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="view " id="hW5-yw-SET"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RDQ-w9-Bat" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1474.0458015267175" y="-460.56338028169017"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image width="1024" height="1024">
+            <string key="name">DALL·E 2024-05-10 12.18.09 - A simple and clean digital illustration of a 'Connect 4' logo with a transparent background. The logo should feature the text 'Connect 4' in a modern,-Photoroom.png-Photoroom</string>
+        </image>
+        <image name="circle.fill" catalog="system" width="128" height="123"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
